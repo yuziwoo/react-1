@@ -34,5 +34,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "homepage": "https://yuziwoo.github.io/react-1/build/"
 }
