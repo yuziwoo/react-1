@@ -1,0 +1,19 @@
+.product {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 80px;
+}
+
+.product .product-wrap {
+    width: 100%;
+    max-width: 1360px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product .product-wrap .list {
+    padding: 20px;
+}

@@ -1,0 +1,45 @@
+.fullImg {
+    width: 100%;
+    display: block;
+}
+
+header {
+    width: 100%;
+    height: 70px;
+    border-bottom: 1px solid lightgray;
+    padding: 0 40px;
+}
+
+.header-wrap {
+    width: 100%;
+    height: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.header-wrap li {
+    height: 100%;
+    padding: 0 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-wrap li a {
+    cursor: pointer;
+    padding: 0 5px;
+}
+
+.header-wrap li a p {
+    font-size: 16px;
+    font-weight: 600;
+    color: black;
+}
+
+.pageName {
+    text-align: center;
+    font-size: 36px;
+    padding: 20px 0;
+}
