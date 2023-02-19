@@ -4,6 +4,7 @@
     justify-content: center;
     align-items: center;
     padding-top: 80px;
+    flex-direction: column;
 }
 
 .product .product-wrap {
@@ -15,5 +16,27 @@
 }
 
 .product .product-wrap .list {
-    padding: 20px;
+    padding: 40px;
+    cursor: pointer;
+}
+
+.product .button-wrap {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-bottom: 40px;
+}
+.product .button-wrap h2 {
+    padding-right: 20px;
+    cursor: pointer;
+    font-weight: 700;
+    opacity: 1;
+    transition: all 0.2s;
+}
+
+.product .button-wrap h2:hover {
+    opacity: 0.4;
+}
+.product .button-wrap h2:last-child {
+    padding-right: 0;
 }
