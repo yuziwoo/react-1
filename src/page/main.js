@@ -13,7 +13,7 @@ function Main(props) {
         <div className="product-wrap">
           {
             props.shoes.map((value, index) => {
-              return <List key={index} value={value} />
+              return <List key={index} value={value}  navigate={props.navigate}/>
             })
           }
         </div>
