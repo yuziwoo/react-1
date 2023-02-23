@@ -1,8 +1,25 @@
-const s = 1*require('fs').readFileSync('/dev/stdin').toString().trim();
-if (s % 4) {
-  console.log(0);
-} else if (s % 100 == 0 && s % 400 != 0) {
-  console.log(0);
-} else {
-  console.log(1);
-}
+const readline = require('readline')
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+})
+
+let input = [];
+rl.on('line', function (line) {
+  input.push(parseInt(line));
+}).on('close', function () {
+  const [x, y] = input;
+  if (x > 0) {
+    if (y > 0) {
+      console.log(1);
+    } else {
+      console.log(4);
+    }
+  } else {
+    if (y > 0) {
+      console.log(2);
+    } else {
+      console.log(3);
+    }
+  }
+})

@@ -1,12 +1,51 @@
 import {useParams} from "react-router-dom";
+import '../css/Detail.module.css';
+import {useState, useEffect} from "react";
+
 
 function Detail(props) {
+
+    let [switchs, setSwitch] = useState(true);
+    let [value1, setValue1] = useState(0);
+
+    // useEffect(() => {
+    //     console.log("Mount, Update 시 실행됨");
+    // })
+    // useEffect(() => {
+    //     console.log("Mount 시 실행됨");
+    // },[])
+    // useEffect(() => {
+    //     console.log("Switch state가 Update되면 실행됨");
+    // },[switchs])
+    // useEffect(() => {
+    //     let a = 0;
+    //     console.log(`mount update a : ${a}`);
+    //     return () => {
+    //         console.log(`unmount a : ${a}`);
+    //     }
+    // },[switchs])
 
     let {id} = useParams();
     let shoe = props.shoes.filter(v => v.id == id)[0];
 
     return(
         <>
+        <button onClick={() => {
+            let a = switchs ? false : true;
+            setSwitch(a);
+        }}>스위치</button>
+        {
+            switchs ? <h6>스위치 켜짐</h6> : null
+        }
+
+        <input type="text" placeholder="숫자만 입력하세요." onInput={(e) => {
+            if (isNaN(e.target.value)) {
+                alert("숫자만 입력하라구!");
+                e.target.value = "";
+            } else {
+                setValue1(e.target.value)
+            }
+        }}></input>
         <h1 className="pageName">상품 상세페이지</h1>
         <h1 className="id">id : {shoe.id}</h1>
         <h1 className="title">title : {shoe.title}</h1>

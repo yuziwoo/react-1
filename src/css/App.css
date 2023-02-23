@@ -43,3 +43,13 @@ header {
     font-size: 36px;
     padding: 20px 0;
 }
+
+button {
+    border: 1px solid green;
+}
+
+input {
+    padding: 30px;
+    margin: 30px;
+    border: 1px solid grey;
+}
