@@ -1,7 +1,9 @@
-const s = require('fs').readFileSync('/dev/stdin').toString().split('\n');
-const n = Number(s[0]);
-
-for (let i = 1; i <= n; i++) {
-  const [a, b] = s[i].trim().split(' ').map(v => Number(v));
-  console.log(a + b);
+s = require('fs').readFileSync('/dev/stdin').toString().split('\n');
+t = s.shift();
+x = s.shift();
+b = 0;
+for (let i = 0; i< +x; i++) {
+  [y, z] = s[i].split(" ").map(v => +v);
+  b += y * z;
 }
+console.log(b == t ? "Yes" : "No");
