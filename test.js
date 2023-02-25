@@ -1,25 +1,7 @@
-const readline = require('readline')
-const rl = readline.createInterface({
-  input: process.stdin,
-  output: process.stdout
-})
+const s = require('fs').readFileSync('/dev/stdin').toString().split('\n');
+const n = Number(s[0]);
 
-let input = [];
-rl.on('line', function (line) {
-  input.push(parseInt(line));
-}).on('close', function () {
-  const [x, y] = input;
-  if (x > 0) {
-    if (y > 0) {
-      console.log(1);
-    } else {
-      console.log(4);
-    }
-  } else {
-    if (y > 0) {
-      console.log(2);
-    } else {
-      console.log(3);
-    }
-  }
-})
+for (let i = 1; i <= n; i++) {
+  const [a, b] = s[i].trim().split(' ').map(v => Number(v));
+  console.log(a + b);
+}

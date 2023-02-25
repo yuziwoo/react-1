@@ -5,16 +5,28 @@ import './css/App.module.css';
 import Detail from "./page/detail.js";
 import Main from "./page/main.js";
 
-import { useState } from 'react';
 import data from "./js/data.js";
 import { Routes, Route, Link, useNavigate, Outlet, useParams } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 import axios from "axios";
 
 
 function App() {
   let [shoes, setShoes] = useState(data);
+  let [tab, setTab] = useState(0);
   let navigate = useNavigate(); // 페이지 이동을 도와주는 함수입니다.
+
+  let [tabClass, setTabClass] = useState("tabContent-off");
+
+  useEffect(() => {
+    let a = setTimeout(() => {setTabClass("tabContent-on")}, 100);
+    
+    return () => {
+      clearTimeout(a);
+      setTabClass("tabContent-off");
+    }
+  }, [tab])
 
   return (
     <div className="App">
@@ -54,7 +66,15 @@ function App() {
         } />
         <Route path="*" element={<h1>NOT FOUND입니다.</h1>} />
 
-        <Route path="/detail/:id" element={<Detail shoes={shoes} setShoes={setShoes}/>} />
+        <Route path="/detail/:id" element={
+          <>
+          <Detail shoes={shoes} setShoes={setShoes}/>
+          <section className="tabMenu">
+            <TabButton tab={tab} setTab={setTab}></TabButton>
+            <section className={`tabContent ${tabClass}`}>안녕 나는 {tab}번 메뉴의 설명이야</section>
+          </section>
+          </>
+        } />
       </Routes>
       </div>
     </div>
@@ -71,6 +91,19 @@ function Header(props) {
         <li><Link to="/"><p>메인페이지</p></Link></li>
       </ul>
     </header>
+  )
+}
+
+function TabButton(props) {
+  let arr = [0, 1, 2];
+  return (
+      <div className={`tab${props.tab} tabwrap`}>
+        {
+          arr.map((v, i) => {
+            return <div key={i} onClick={() => {props.setTab(i)}}><p>메뉴{i+1}</p></div>
+          })
+        }
+      </div>
   )
 }
 

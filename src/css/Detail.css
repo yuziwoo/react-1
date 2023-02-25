@@ -1,3 +1,58 @@
-.header-wrap {
-  background-color: green;
+.tabMenu {
+  padding: 40px 0px;
+  width: 100%;
+  max-width: 720px;
+  margin: auto;
+}
+
+.tabMenu .tabwrap {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.tabMenu .tabwrap div {
+  width: 33.333333%;
+  padding: 20px 30px;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 600;
+  background-color: rgb(100, 100, 100);
+  border-bottom: 1px solid rgb(200, 200, 200);
+  color: white;
+  cursor: pointer;
+  transition: all 0.3s;
+  opacity: 1;
+}
+
+.tabMenu .tabwrap div:hover {
+  opacity: 0.8;
+}
+
+.tabMenu .tab0 div:nth-child(1) {
+  background-color: rgb(150, 150, 200);
+  border-bottom: 1px solid white;
+}
+.tabMenu .tab1 div:nth-child(2) {
+  background-color: rgb(150, 150, 200);
+  border-bottom: 1px solid white;
+}
+.tabMenu .tab2 div:nth-child(3) {
+  background-color: rgb(150, 150, 200);
+  border-bottom: 1px solid white;
+}
+
+.tabMenu .tabContent {
+  width: 100%;
+  text-align: center;
+  padding: 40px 20px;
+  border-bottom: 1px solid rgb(200, 200, 200);
+  min-height: 400px;
+  color: white;
+}
+
+.tabMenu .tabContent-on {
+  transition: all 0.5s;
+  color: black;
 }

@@ -1,12 +1,11 @@
 import {useParams} from "react-router-dom";
 import '../css/Detail.module.css';
+import '../css/Detail.css';
 import {useState, useEffect} from "react";
 
 
 function Detail(props) {
-
-    let [switchs, setSwitch] = useState(true);
-    let [value1, setValue1] = useState(0);
+    let [valuex, setValue1] = useState("숫자만 입력하세요.");
 
     // useEffect(() => {
     //     console.log("Mount, Update 시 실행됨");
@@ -30,15 +29,7 @@ function Detail(props) {
 
     return(
         <>
-        <button onClick={() => {
-            let a = switchs ? false : true;
-            setSwitch(a);
-        }}>스위치</button>
-        {
-            switchs ? <h6>스위치 켜짐</h6> : null
-        }
-
-        <input type="text" placeholder="숫자만 입력하세요." onInput={(e) => {
+        <input type="text" placeholder={valuex} onInput={(e) => {
             if (isNaN(e.target.value)) {
                 alert("숫자만 입력하라구!");
                 e.target.value = "";
