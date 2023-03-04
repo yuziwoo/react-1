@@ -1,1 +1,29 @@
-a=0;b=0;p=['F','','D0','D+','C0','C+','B0','B+','A0','A+'];require('fs').readFileSync('/dev/stdin').toString().trim().split('\n').map((v)=>{d = v.split(' ')[2];if(d !='P'){c= +v.split(' ')[1];a += p.indexOf(d)*c/2;b += c;}});console.log((a/b).toFixed(6));
+//한 줄 입력 try.txt 지우고 /dev/stdin
+const s = require('fs').readFileSync('try.txt').toString().split(' ');
+const s = require('fs').readFileSync('/dev/stdin').toString().split(' ');
+
+
+//여러 줄 입력 : try.txt 지우고 /dev/stdin
+const s = require('fs').readFileSync('try.txt').toString().split('\n');
+const s = require('fs').readFileSync('/dev/stdin').toString().split('\n');
+
+// 이렇게 해도 됨
+const fs = require("fs");
+const filePath = process.platform === "linux" ? "/dev/stdin" : "./input.txt";
+let input = fs.readFileSync(filePath).toString();
+
+// readline
+const readline = require('readline')
+const rl = readline.createInterface({
+  input: process.stdin,
+  output: process.stdout
+})
+
+let input = [];
+rl.on('line', function (line) {
+  input.push(parseInt(line));
+}).on('close', function () {
+  const [x, y] = input;
+  })
+
+/dev/stdin
